@@ -1,0 +1,11 @@
+[Unit]
+After=network.target
+
+[Service]
+ExecStart=ExecStart=/opt/ProductDetailUpdate/productDetailProcesser.py
+; User=nimeshka
+WorkingDirectory=/opt/ProductDetailUpdate/
+
+[Install]
+WantedBy=default.target
+
