@@ -87,8 +87,7 @@ def main():
 
                             if last_ssn is not None and last_ssn != ssn:
                                 # SSN Changed. Append and empty the object.
-                                # operations.append(json_obj)
-
+                                
                                 operations.append(
                                     UpdateOne(
                                     { "ssn": json_obj["ssn"] },
@@ -119,7 +118,6 @@ def main():
                     
                     
                     # End of the file. Append the current data to the opeations array.
-                    # operations.append(json_obj)
                     operations.append(
                                     UpdateOne(
                                     { "ssn": json_obj["ssn"] },
@@ -130,10 +128,6 @@ def main():
                                     }
                                 , upsert=True)
                                 )
-
-                    # print json.dumps(json_obj, indent=4, sort_keys=True)
-                    # print json.dumps(operations, indent=4, sort_keys=True)
-
                     
                     if len(operations) > 0:    
                         logging.info("Executing batch upsert!")
